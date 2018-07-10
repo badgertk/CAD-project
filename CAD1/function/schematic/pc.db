@@ -1,0 +1,24 @@
+#
+CAD1 nand2 symbol
+I9
+I8
+I7
+I6
+I5
+I4
+I3
+I2
+I1
+I0
+#ISCELL
+basic ipin symbol
+PIN2
+PIN1
+PIN0
+#ISCELL
+basic iopin symbolr
+PIN6
+PIN4
+#ISCELL
+basic opin symbol
+PIN5

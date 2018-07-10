@@ -1,0 +1,30 @@
+// Library - CAD1, Cell - function, View - function
+// LAST TIME SAVED: May 14 16:05:31 2017
+// NETLIST TIME: May 14 16:05:55 2017
+`timescale 1ns / 1ns 
+
+module function_ ( F, A, B, C, GND, VDD );
+
+output  F;
+
+input  A, B, C, GND, VDD;
+
+
+specify 
+    specparam CDS_LIBNAME  = "CAD1";
+    specparam CDS_CELLNAME = "function";
+    specparam CDS_VIEWNAME = "function";
+endspecify
+
+nand2 I9 ( F, GND, VDD, net24, net14);
+nand2 I8 ( net14, GND, VDD, net19, C);
+nand2 I7 ( net19, GND, VDD, B, B);
+nand2 I6 ( net24, GND, VDD, net29, net29);
+nand2 I5 ( net29, GND, VDD, net44, net34);
+nand2 I4 ( net34, GND, VDD, net39, C);
+nand2 I3 ( net39, GND, VDD, A, A);
+nand2 I2 ( net44, GND, VDD, net54, net49);
+nand2 I1 ( net49, GND, VDD, B, B);
+nand2 I0 ( net54, GND, VDD, A, A);
+
+endmodule

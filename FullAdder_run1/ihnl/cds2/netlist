@@ -1,0 +1,24 @@
+// Library - CAD1, Cell - FullAdder, View - schematic
+// LAST TIME SAVED: May 14 12:19:09 2017
+// NETLIST TIME: May 14 13:50:17 2017
+`timescale 1ns / 1ns 
+
+module FullAdder ( Cout, Sum, A, B, Cin );
+output  Cout, Sum;
+
+input  A, B, Cin;
+
+
+specify 
+    specparam CDS_LIBNAME  = "CAD1";
+    specparam CDS_CELLNAME = "FullAdder";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+or2 I14 ( Cout, net30, net27);
+and2 I12 ( net30, A, B);
+and2 I13 ( net27, net33, Cin);
+xor2 I11 ( Sum, net33, Cin);
+xor2 I10 ( net33, A, B);
+
+endmodule

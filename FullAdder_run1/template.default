@@ -1,0 +1,22 @@
+
+`timescale 1ns / 1ns
+
+module test;
+
+
+wire  Cout, Sum;
+
+reg  A, B, Cin;
+
+
+
+FullAdder top(Cout, Sum, A, B, Cin); 
+ 
+
+`ifdef verilog
+
+ //please enter any additional verilog stimulus in the testfixture.verilog file
+  `include "testfixture.verilog"
+`endif
+
+endmodule 

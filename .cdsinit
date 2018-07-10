@@ -1,0 +1,175 @@
+;;                        -*-Lisp-*-
+;;
+;; NCSU CDK Copyright (C) 2006 North Carolina State University
+;;
+
+(let 
+    ((LOCAL_CDK_DIR (getShellEnvVar "CDK_DIR")))
+  (if LOCAL_CDK_DIR
+      (if (not (boundp 'NCSU_CDK_LOADED))
+	  (let ()   ; CDK needs to be loaded, so load it.
+
+	    (setq NCSU_CDK_DIR LOCAL_CDK_DIR)
+	    (procedure (prependNCSUCDKInstallPath dir)
+		       (strcat NCSU_CDK_DIR "/" dir))
+	    
+	    (printf "Loading NCSU CDK 1.5.1 customizations...\n")
+	    (setq NCSU_newLayoutMenuLabels t)
+	    (putpropq (hiGetCIWindow) 96 "maxLayerPoolSize")
+	    (envSetVal "graphic" "drfPath" 'string
+		       (strcat NCSU_CDK_DIR "/cdssetup/display.drf"))
+	    
+	    (if (isFile (prependNCSUCDKInstallPath "cdssetup/cdsenv"))
+		(envLoadVals 
+		 ?envFile (prependNCSUCDKInstallPath "cdssetup/cdsenv")
+		 ?tool "ALL"))
+	    
+	    (if (isFile "~/.cdsenv")
+		(envLoadVals 
+		 ?envFile "~/.cdsenv"
+		 ?tool "ALL"))
+
+	    (let
+		((configFileList (list  ; "aaConfig.il" 
+					; "dmConfig.il" 
+					; "dciConfig.il"
+					; "metConfig.il"
+					; "sysConfig.il" 
+					; "uiConfig.il" 
+					; "leConfig.il" 
+				  "schConfig.il"
+				  "streamIn.il"                   
+				  ))
+		 (path (strcat ". ~ "
+			       (prependNCSUCDKInstallPath "skill/config_files")))
+		 (saveSkillPath (getSkillPath))
+		 file )
+	      (setSkillPath path)
+	      (foreach file configFileList
+		       (if (isFile file)
+			   (loadi file)))
+	      (setSkillPath saveSkillPath))
+
+	    (let
+		((bindKeyFileList (list   
+				   "common_bindkeys.il"                
+				   ))
+		 (path (strcat ". ~ "
+			       (prependNCSUCDKInstallPath "cdssetup")))
+		 (saveSkillPath (getSkillPath))
+		 file )
+	      (setSkillPath path)
+	      (foreach file bindKeyFileList
+		       (if (isFile file)
+			   (loadi file)))
+	      (setSkillPath saveSkillPath))
+	    
+	    (sstatus writeProtect nil)
+	    
+	    (let ((skillPathElements
+		   (list "." "~"
+			 (prependNCSUCDKInstallPath "skill")
+			 (prependNCSUCDKInstallPath "skill/cdf")
+			 (prependNCSUCDKInstallPath "skill/menus")
+			 (prependNCSUCDKInstallPath "skill/menus/artist")
+			 (prependNCSUCDKInstallPath "skill/menus/ciw")
+			 (prependNCSUCDKInstallPath "skill/menus/virtuoso")
+			 (prependNCSUCDKInstallPath "skill/misc")
+			 (prependNCSUCDKInstallPath "skill/pcells")
+			 (prependNCSUCDKInstallPath "techfile")))
+		  sPE)
+
+	      (foreach sPE skillPathElements
+		       (setSkillPath (cons sPE (getSkillPath)))))
+	    
+	    (if (isCallable 'awvSetOptionValue)
+		(let ()
+		  (awvSetOptionValue  "hcDisplay" "psb" )
+		  (awvSetOptionValue  "hcTmpDir"  "/tmp" )))
+	    
+	    (if  (not (boundp 'NCSU_skillAlreadyLoaded))
+		(let ()
+		  (setq NCSU_skillAlreadyLoaded t)
+		  (printf "Loading NCSU SKILL routines...\n")
+		  (load (prependNCSUCDKInstallPath "skill/loadSkill.il"))))
+	    	    
+	    (asiSetEnvOptionVal  
+	     (asiGetTool 'spectreS) 
+	     'modelPath (strcat NCSU_CDK_DIR "/models/spectre/nom/"))
+	    (asiSetEnvOptionVal  
+	     (asiGetTool 'hspiceS) 
+	     'modelPath (strcat NCSU_CDK_DIR "/models/hspice/public/"))
+	    (envSetVal "graphic" "drfPath"  'string
+		       (strcat NCSU_CDK_DIR "/cdssetup/display.drf"))
+
+	    (setq lePlotTemplate 
+		  (prependNCSUCDKInstallPath "cdssetup/layoutPlotTemplate"))
+	    (setq schPlotTemplate
+		  (prependNCSUCDKInstallPath "cdssetup/schPlotTemplate" ))
+	    (unless (getShellEnvVar "SKIP_CDSLIB_MANAGER")
+	      (ddsOpenLibManager))
+	    (printf "Done loading NCSU_CDK customizations.\n")
+	    )
+	(printf "NCSU CDK already loaded.\n")
+	)
+    ; you get to this let if NCSU_CDK_DIR is nil
+    (let ()
+      (printf "Environment variable CDK_DIR must be defined to use\n")
+      (printf "the NCSU CDK.  It is not defined in the calling environment\n")
+      (printf "so the NCSU customizations will not be performed!\n"))))
+
+if(isFile("/home/seas/postdoc/liobe/cadence/Home_Cad/ECE205/setup/downloaded/ncsu-cdk-1.5.1/ece205.cdsinit") then
+        loadi("/home/seas/postdoc/liobe/cadence/Home_Cad/ECE205/setup/downloaded/ncsu-cdk-1.5.1/ece205.cdsinit")
+) ; end if
+
+;; jcl modifications
+pdk_path="/home/seas/postdoc/liobe/cadence/Home_Cad/ECE205/setup/downloaded/ncsu-cdk-1.5.1/"
+
+;; initialize spectre simulation temp
+envSetVal("spectre.opts" "temp" 'string "25")
+
+;; disable overbar in display
+envSetVal("layout" "labelOverbar" 'boolean nil)
+
+;; change stop level in layout to max
+envSetVal("layout" "stopLevel" 'int 32)
+
+;; initialize ADE to open with spectre simulator
+envSetVal("asimenv.startup" "simulator" 'string "spectre")
+
+;; set AWD to be default waveform viewer
+envSetVal("asimenv.startup" "cds_ade_wftool" 'string "awd")
+
+;; set location where simulation data will be saved
+saveSimDir=strcat("/tmp/" getShellEnvVar("USER") "/simulation")
+if(!isDir(saveSimDir) then
+        if(isWritable("/tmp") then
+                system(sprintf(nil "mkdir -p %s" saveSimDir))
+        else
+                printf(sprintf(nil "**ERROR** -- See system administrator to make %s writable.\n" saveSimDir))
+        ); endif
+) ; end if
+;; set location where simulation data will be saved
+saveSimDir=strcat("/tmp/" getShellEnvVar("USER") "/simulation")
+if(!isDir(saveSimDir) then
+        if(isWritable("/tmp") then
+                system(sprintf(nil "mkdir -p %s" saveSimDir))
+        else
+                printf(sprintf(nil "**ERROR** -- See system administrator to make %s writable.\n" saveSimDir))
+        ); endif
+) ; end if
+
+;; set location where simulation data will be saved
+saveSimDir=strcat("/tmp/" getShellEnvVar("USER") "/simulation")
+if(!isDir(saveSimDir) then
+        if(isWritable("/tmp") then
+                system(sprintf(nil "mkdir -p %s" saveSimDir))
+        else
+                printf(sprintf(nil "**ERROR** -- See system administrator to make %s writable.\n" saveSimDir))
+        ); endif
+) ; end if
+
+;; set model paths by default
+envSetVal("spectre.envOpts" "modelFiles" 'string sprintf(modelPath "%s/models/spectre/nom/ami06N.m %s/models/spectre/nom/ami06P.m " pdk_path pdk_path))
+envSetVal("ams.envOpts" "modelFiles" 'string sprintf(modelPath "%s/models/spectre/nom/ami06N.m %s/models/spectre/nom/ami06P.m " pdk_path pdk_path))
+

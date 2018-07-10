@@ -1,0 +1,26 @@
+// Library - CAD1, Cell - nand2, View - schematic
+// LAST TIME SAVED: May 12 17:38:02 2017
+// NETLIST TIME: May 15 18:29:30 2017
+`timescale 1ns / 1ns 
+
+module nand2 ( OUT, GND, VDD, A, B );
+
+output  OUT;
+
+inout  GND, VDD;
+
+input  A, B;
+
+
+specify 
+    specparam CDS_LIBNAME  = "CAD1";
+    specparam CDS_CELLNAME = "nand2";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+pfet M4 ( OUT, VDD, B);
+pfet M1 ( OUT, VDD, A);
+nfet M2 ( net014, GND, B);
+nfet M3 ( OUT, net014, A);
+
+endmodule

@@ -1,0 +1,9 @@
+CADENCE IHNL01060
+$model
+CAD1/function/function function_
+CAD1/nand2/schematic nand2
+$endmodel
+$net
+$endnet
+$param
+$endparam

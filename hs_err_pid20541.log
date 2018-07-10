@@ -1,0 +1,269 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  SIGSEGV (0xb) at pc=0xad6e8eb6, pid=20541, tid=4159941312
+#
+# Java VM: Java HotSpot(TM) Server VM (1.5.0_04-b05 mixed mode)
+# Problematic frame:
+# C  [libwslicense.so+0xb4eb6]  nnllCu+0xca
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x08a8cb28):  JavaThread "main" [_thread_in_native, id=20541]
+
+siginfo:si_signo=11, si_errno=0, si_code=1, si_addr=0x00000000
+
+Registers:
+EAX=0xff8cd880, EBX=0xad785eac, ECX=0xad514000, EDX=0x00000000
+ESP=0xff8cd878, EBP=0xff8ce4a4, ESI=0x00004440, EDI=0xff8d21f4
+EIP=0xad6e8eb6, CR2=0x00000000, EFLAGS=0x00010282
+
+Top of Stack: (sp=0xff8cd878)
+0xff8cd878:   00000000 ad785eac 00000000 00000000
+0xff8cd888:   00000000 00000000 00000000 00000000
+0xff8cd898:   00000000 00000000 00000000 00000000
+0xff8cd8a8:   00000000 00000000 00000000 00000000
+0xff8cd8b8:   00000000 00000000 00000000 00000000
+0xff8cd8c8:   00000000 00000000 00000000 00000000
+0xff8cd8d8:   00000000 00000000 00000000 00000000
+0xff8cd8e8:   ff8ceb8c ff8d21f4 ff8ce52c ad74db1c 
+
+Instructions: (pc=0xad6e8eb6)
+0xad6e8ea6:   00 74 27 8b 45 fc 8b 50 0c 52 8b 45 fc 8b 50 10
+0xad6e8eb6:   8b 02 50 8b 45 f0 83 c0 04 50 e8 3f 3c f6 ff 83 
+
+Stack: [0xff6d8000,0xff8d8000),  sp=0xff8cd878,  free space=2006k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libwslicense.so+0xb4eb6]  nnllCu+0xca
+C  [libwslicense.so+0x99da0]
+C  [libwslicense.so+0x99c2a]  bXF3YF+0x13a
+C  [libwslicense.so+0xa604f]
+C  [libwslicense.so+0xa5e64]  ahAdHL+0x12c
+C  [libwslicense.so+0xa5bb9]  fCzBTu+0x139
+C  [libwslicense.so+0xea1bd]
+C  [libwslicense.so+0xe83b8]
+C  [libwslicense.so+0xe79dd]  c_2GIW+0x175
+C  [libwslicense.so+0xe77a3]  xcDKeZ+0xa3
+C  [libwslicense.so+0xdda54]  dspqj9+0x58a
+C  [libwslicense.so+0xde0ee]  zCQJE7+0x5b
+C  [libwslicense.so+0xded5e]  kCc1gQ+0x119
+C  [libwslicense.so+0x19ecc]  Java_COM_cadence_awd_license_License_checkLicense+0x4c
+j  COM.cadence.awd.license.License.checkLicense(Ljava/lang/String;D)Z+0
+j  COM.cadence.awd.license.License.doLicenseCheck([Ljava/lang/String;[LCOM/cadence/awd/license/Product;)Z+32
+j  COM.cadence.awd.session.ApplicationManager.main([Ljava/lang/String;)V+346
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x25174c]
+V  [libjvm.so+0x3f1058]
+V  [libjvm.so+0x25157f]
+V  [libjvm.so+0x2748c2]
+V  [libjvm.so+0x269087]
+C  [java+0x17fe]
+C  [libc.so.6+0x15edc]  __libc_start_main+0xdc
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  COM.cadence.awd.license.License.checkLicense(Ljava/lang/String;D)Z+0
+j  COM.cadence.awd.license.License.doLicenseCheck([Ljava/lang/String;[LCOM/cadence/awd/license/Product;)Z+32
+j  COM.cadence.awd.session.ApplicationManager.main([Ljava/lang/String;)V+346
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0xae303a58 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=20553]
+  0xae302638 JavaThread "CompilerThread1" daemon [_thread_blocked, id=20552]
+  0xae301678 JavaThread "CompilerThread0" daemon [_thread_blocked, id=20551]
+  0xae300678 JavaThread "AdapterThread" daemon [_thread_blocked, id=20550]
+  0x08b4bb40 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=20549]
+  0x08b41588 JavaThread "Finalizer" daemon [_thread_blocked, id=20548]
+  0x08b406f8 JavaThread "Reference Handler" daemon [_thread_blocked, id=20547]
+=>0x08a8cb28 JavaThread "main" [_thread_in_native, id=20541]
+
+Other Threads:
+  0x08b3c378 VMThread [id=20546]
+  0xae304ff8 WatcherThread [id=20554]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 10752K, used 930K [0xeb810000, 0xec410000, 0xf29d0000)
+  eden space 9216K, 10% used [0xeb810000,0xeb8f88c8,0xec110000)
+  from space 1536K, 0% used [0xec290000,0xec290000,0xec410000)
+  to   space 1536K, 0% used [0xec110000,0xec110000,0xec290000)
+ PSOldGen        total 24576K, used 0K [0xb29d0000, 0xb41d0000, 0xeb810000)
+  object space 24576K, 0% used [0xb29d0000,0xb29d0000,0xb41d0000)
+ PSPermGen       total 24576K, used 2895K [0xaf9d0000, 0xb11d0000, 0xb29d0000)
+  object space 24576K, 11% used [0xaf9d0000,0xafca3c58,0xb11d0000)
+
+Dynamic libraries:
+00aa8000-00ac3000 r-xp 00000000 fd:00 983869                             /lib/ld-2.5.so
+00ac3000-00ac4000 r-xp 0001a000 fd:00 983869                             /lib/ld-2.5.so
+00ac4000-00ac5000 rwxp 0001b000 fd:00 983869                             /lib/ld-2.5.so
+00ac7000-00c1d000 r-xp 00000000 fd:00 983046                             /lib/libc-2.5.so
+00c1d000-00c1f000 r-xp 00156000 fd:00 983046                             /lib/libc-2.5.so
+00c1f000-00c20000 rwxp 00158000 fd:00 983046                             /lib/libc-2.5.so
+00c20000-00c23000 rwxp 00c20000 00:00 0 
+00c25000-00c3b000 r-xp 00000000 fd:00 983092                             /lib/libpthread-2.5.so
+00c3b000-00c3c000 r-xp 00015000 fd:00 983092                             /lib/libpthread-2.5.so
+00c3c000-00c3d000 rwxp 00016000 fd:00 983092                             /lib/libpthread-2.5.so
+00c3d000-00c3f000 rwxp 00c3d000 00:00 0 
+00c41000-00c44000 r-xp 00000000 fd:00 983853                             /lib/libdl-2.5.so
+00c44000-00c45000 r-xp 00002000 fd:00 983853                             /lib/libdl-2.5.so
+00c45000-00c46000 rwxp 00003000 fd:00 983853                             /lib/libdl-2.5.so
+00c4e000-00c63000 r-xp 00000000 fd:00 983050                             /lib/libnsl-2.5.so
+00c63000-00c64000 r-xp 00014000 fd:00 983050                             /lib/libnsl-2.5.so
+00c64000-00c65000 rwxp 00015000 fd:00 983050                             /lib/libnsl-2.5.so
+00c65000-00c67000 rwxp 00c65000 00:00 0 
+00ca3000-00cca000 r-xp 00000000 fd:00 983874                             /lib/libm-2.5.so
+00cca000-00ccb000 r-xp 00026000 fd:00 983874                             /lib/libm-2.5.so
+00ccb000-00ccc000 rwxp 00027000 fd:00 983874                             /lib/libm-2.5.so
+08048000-08056000 r-xp 00000000 00:19 8435289                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/bin/java
+08056000-08058000 rwxp 0000e000 00:19 8435289                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/bin/java
+08a88000-08c2c000 rwxp 08a88000 00:00 0                                  [heap]
+ad514000-ad549000 r-xs 00000000 fd:02 4718632                            /var/run/nscd/dbDxnaYu (deleted)
+ad549000-ad556000 r-xp 00000000 00:19 7830390                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libcls_sh.so
+ad556000-ad558000 rwxp 0000c000 00:19 7830390                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libcls_sh.so
+ad558000-ad55f000 r-xp 00000000 00:19 7830548                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libgcc_s.so.1
+ad55f000-ad560000 rwxp 00007000 00:19 7830548                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libgcc_s.so.1
+ad560000-ad5fa000 r-xp 00000000 00:19 7830551                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libstdc++.so.5.0.3
+ad5fa000-ad60f000 rwxp 00099000 00:19 7830551                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libstdc++.so.5.0.3
+ad60f000-ad614000 rwxp ad60f000 00:00 0 
+ad614000-ad62f000 r-xp 00000000 00:19 7829704                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libvirtuos_sh.so
+ad62f000-ad631000 rwxp 0001a000 00:19 7829704                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libvirtuos_sh.so
+ad631000-ad634000 rwxp ad631000 00:00 0 
+ad634000-ad77a000 r-xp 00000000 00:19 7847247                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/dfII/lib/libwslicense.so
+ad77a000-ad788000 rwxp 00146000 00:19 7847247                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/dfII/lib/libwslicense.so
+ad788000-ad7a8000 rwxp ad788000 00:00 0 
+ad7a8000-ad7da000 r-xs 00000000 00:19 8326407                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/share/java/jai-1_1_1_01/lib/jai_codec.jar
+ad7da000-ad808000 r-xs 00000000 00:19 7830272                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/share/java/crimson.jar
+ad808000-ad876000 r-xs 00000000 00:19 7830111                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/share/java/symphony.jar
+ad876000-ad8bb000 r-xs 00000000 00:19 7831027                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/share/java/wsutil.jar
+ad8bb000-adae4000 r-xs 00000000 00:19 7831026                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/share/java/wavescan.jar
+adae4000-adb0d000 r-xs 00000000 00:19 7830699                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/share/java/srr.jar
+adb0d000-adbd0000 r-xs 00000000 00:19 8435364                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/ext/localedata.jar
+adbd0000-adbfb000 r-xs 00000000 00:19 8435362                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/ext/sunpkcs11.jar
+adbfb000-adbfc000 ---p adbfb000 00:00 0 
+adbfc000-adc7c000 rwxp adbfc000 00:00 0 
+adc7c000-adc7f000 ---p adc7c000 00:00 0 
+adc7f000-ae17d000 rwxp adc7f000 00:00 0 
+ae17d000-ae180000 ---p ae17d000 00:00 0 
+ae180000-ae1fe000 rwxp ae180000 00:00 0 
+ae1fe000-ae201000 ---p ae1fe000 00:00 0 
+ae201000-ae27f000 rwxp ae201000 00:00 0 
+ae27f000-ae282000 ---p ae27f000 00:00 0 
+ae282000-ae3dd000 rwxp ae282000 00:00 0 
+ae3dd000-ae400000 ---p ae3dd000 00:00 0 
+ae401000-ae40f000 r-xp 00000000 00:19 7830385                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libcdsCommon_sh.so
+ae40f000-ae410000 ---p 0000e000 00:19 7830385                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libcdsCommon_sh.so
+ae410000-ae411000 rwxp 0000e000 00:19 7830385                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libcdsCommon_sh.so
+ae411000-ae414000 rwxp ae411000 00:00 0 
+ae414000-ae41b000 r-xs 00000000 00:19 7830273                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/share/java/jaxp.jar
+ae41b000-ae429000 r-xs 00000000 00:19 7830698                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/share/java/cds_srr.jar
+ae429000-ae44f000 r-xs 00000000 00:19 8435361                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/ext/sunjce_provider.jar
+ae44f000-ae452000 ---p ae44f000 00:00 0 
+ae452000-ae950000 rwxp ae452000 00:00 0 
+ae950000-ae953000 ---p ae950000 00:00 0 
+ae953000-aee51000 rwxp ae953000 00:00 0 
+aee51000-aee54000 ---p aee51000 00:00 0 
+aee54000-af352000 rwxp aee54000 00:00 0 
+af352000-af353000 ---p af352000 00:00 0 
+af353000-af3d3000 rwxp af353000 00:00 0 
+af3d3000-af3d4000 ---p af3d3000 00:00 0 
+af3d4000-af454000 rwxp af3d4000 00:00 0 
+af454000-af455000 ---p af454000 00:00 0 
+af455000-af4d5000 rwxp af455000 00:00 0 
+af4d5000-af4d6000 ---p af4d5000 00:00 0 
+af4d6000-af556000 rwxp af4d6000 00:00 0 
+af556000-af557000 ---p af556000 00:00 0 
+af557000-af5e3000 rwxp af557000 00:00 0 
+af5e3000-af5ef000 rwxp af5e3000 00:00 0 
+af5ef000-af5fb000 rwxp af5ef000 00:00 0 
+af5fb000-af7b7000 rwxp af5fb000 00:00 0 
+af7b7000-af7c3000 rwxp af7b7000 00:00 0 
+af7c3000-af7cf000 rwxp af7c3000 00:00 0 
+af7cf000-af7db000 rwxp af7cf000 00:00 0 
+af7db000-af996000 rwxp af7db000 00:00 0 
+af996000-af99d000 rwxp af996000 00:00 0 
+af99d000-af9cf000 rwxp af99d000 00:00 0 
+af9cf000-b11d0000 rwxp af9cf000 00:00 0 
+b11d0000-b29d0000 rwxp b11d0000 00:00 0 
+b29d0000-b41d0000 rwxp b29d0000 00:00 0 
+b41d0000-eb810000 rwxp b41d0000 00:00 0 
+eb810000-ec410000 rwxp eb810000 00:00 0 
+ec410000-f29d0000 rwxp ec410000 00:00 0 
+f29d3000-f29d4000 r-xp 00000000 00:19 7830392                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libfastt_sh.so
+f29d4000-f29d5000 rwxp 00000000 00:19 7830392                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/lib/libfastt_sh.so
+f29d5000-f29d7000 r-xs 00000000 00:19 8435363                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/ext/dnsns.jar
+f29d7000-f29d9000 rwxp f29d7000 00:00 0 
+f29d9000-f2a57000 rwxp f29d9000 00:00 0 
+f2a57000-f2a9f000 rwxp f2a57000 00:00 0 
+f2a9f000-f4a57000 rwxp f2a9f000 00:00 0 
+f4a57000-f5275000 r-xs 00000000 00:19 8435924                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/charsets.jar
+f5275000-f5289000 r-xs 00000000 00:19 8435365                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/jce.jar
+f5289000-f5302000 r-xs 00000000 00:19 8435927                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/jsse.jar
+f5302000-f536b000 rwxp f5302000 00:00 0 
+f536b000-f754e000 r-xs 00000000 00:19 8435926                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/rt.jar
+f754e000-f7561000 r-xp 00000000 00:19 8435328                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/libzip.so
+f7561000-f7563000 rwxp 00012000 00:19 8435328                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/libzip.so
+f7563000-f7584000 r-xp 00000000 00:19 8435326                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/libjava.so
+f7584000-f7586000 rwxp 00020000 00:19 8435326                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/libjava.so
+f7586000-f75bb000 r-xs 00000000 fd:02 4718630                            /var/run/nscd/db9KXxqD (deleted)
+f75bb000-f7ac2000 r-xp 00000000 00:19 8435311                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/server/libjvm.so
+f7ac2000-f7b24000 rwxp 00506000 00:19 8435311                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/server/libjvm.so
+f7b24000-f7f3b000 rwxp f7b24000 00:00 0 
+f7f3b000-f7f46000 r-xp 00000000 00:19 8435324                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/libverify.so
+f7f46000-f7f47000 rwxp 0000b000 00:19 8435324                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/libverify.so
+f7f47000-f7f4f000 rwxs 00000000 fd:00 65639                              /tmp/hsperfdata_ywu37/20541
+f7f4f000-f7f55000 r-xp 00000000 00:19 8435309                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/native_threads/libhpi.so
+f7f55000-f7f56000 rwxp 00006000 00:19 8435309                            /Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/native_threads/libhpi.so
+f7f56000-f7f57000 rwxp f7f56000 00:00 0 
+f7f57000-f7f58000 r-xp f7f57000 00:00 0 
+f7f58000-f7f59000 rwxp f7f58000 00:00 0 
+ff6d8000-ff6db000 ---p ff6d8000 00:00 0 
+ff6dc000-ff8d8000 rwxp 7fffffe02000 00:00 0                              [stack]
+ffffe000-fffff000 r-xp ffffe000 00:00 0 
+
+VM Arguments:
+jvm_args: -Dclient.xserver.version=11603000 -Dclient.xserver.vendor=Moba/X -Xss5M -Xms36M -Xmx1024M -XX:PermSize=24M -XX:MaxPermSize=48M -XX:NewSize=12M -Dswing.metalTheme=steel
+java_command: COM.cadence.awd.session.ApplicationManager -log ade_wavescan.log -noui -exprlang Skill -mpssession icfb20486 -mpshost laplace
+
+Environment Variables:
+JAVA_HOME=
+LD_LIBRARY_PATH=/Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386/server:/Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/lib/i386:/Net/u_ece.ece/usr/ece/cadence.Linux/IC50.46.006/tools.lnx86/jre1.50/../lib/i386:/Amd/ece/cadence.Linux/IC50.46.006/share/java/COM/cadence/awd/skill/cmdlang/il:/Amd/ece/cadence.Linux/IC50.46.006/tools/dfII/lib:/Amd/ece/cadence.Linux/IC50.46.006/tools/mdl/lib:/Amd/ece/cadence.Linux/IC50.46.006/tools/mdl/expr/lib:/Amd/ece/cadence.Linux/IC50.46.006/tools/lib:/Amd/ece/cadence.Linux/IC50.46.006
+SHELL=/bin/csh
+DISPLAY=localhost:10.0
+HOSTTYPE=x86_64-linux
+OSTYPE=linux
+MACHTYPE=x86_64
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x4b8860], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x4b8860], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x3f00a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x3f00a0], sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGILL: [libjvm.so+0x3f00a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x3f23e0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x3f1e10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x3f1e10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x3f1e10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x3f1e10], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:CentOS release 5.11 (Final)
+
+uname:Linux 2.6.18-417.el5 #1 SMP Tue Dec 20 13:11:30 UTC 2016 x86_64
+libc:glibc 2.5 NPTL 2.5 
+rlimit: STACK 10240k, CORE 0k, NPROC 96116, NOFILE 65526, AS infinity
+load average:0.02 0.01 0.00
+
+CPU:total 4 family 79, cmov, cx8, fxsr, mmx, sse, sse2, ht
+
+Memory: 4k page, physical 3004k(35k free), swap 12799k(12799k free)
+
+vm_info: Java HotSpot(TM) Server VM (1.5.0_04-b05) for linux-x86, built on Jun  3 2005 02:09:05 by java_re with gcc 3.2.1-7a (J2SE release)
+

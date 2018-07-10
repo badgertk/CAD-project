@@ -1,0 +1,25 @@
+
+Running simulation in directory: "/Amd/hschool/courses/ECE205/work_libs/ywu37/LVS".
+
+
+
+Begin netlist:    May 15 20:52:05 2017
+	view name list	= ("auLvs" "extracted" "schematic")
+	stop name list	= ("auLvs")
+	library name	= "CAD2"
+	cell name	= "function"
+	view name	= "extracted"
+	globals lib	= "basic"
+Running Artist Flat Netlisting ...
+End netlist:    May 15 20:52:05 2017
+
+Moving original netlist to extNetlist
+Removing parasitic components from netlist
+	presistors removed:  0
+	pcapacitors removed: 0
+	pinductors removed:  0
+	pdiodes removed:     0
+	trans lines removed: 0
+	50 nodes merged into 50 nodes
+*Error* dbClose: argument #1 should be a database object (type template = "d") - nil
+*WARNING* dbOpenCellViewByType: Failed to open cellView (function schematic) from lib (CAD2).  Not a valid database file.

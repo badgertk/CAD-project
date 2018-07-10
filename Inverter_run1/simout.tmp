@@ -1,0 +1,30 @@
+TOOL:	ncxlmode	08.20-s024: Started on May 13, 2017 at 15:21:43 EDT
+ncxlmode
+	+delay_mode_path
+	+typdelays
+	-l
+	simout.tmp
+	/Amd/hschool/courses/ECE205/work_libs/ywu37/Inverter_run1/testfixture.template
+	-f /Amd/hschool/courses/ECE205/work_libs/ywu37/Inverter_run1/verilog.inpfiles
+		/Amd/hschool/courses/ECE205/setup/downloaded/ncsu-cdk-1.5.1/lib/NCSU_Analog_Parts/pmos/functional/verilog.v
+		/Amd/hschool/courses/ECE205/setup/downloaded/ncsu-cdk-1.5.1/lib/NCSU_Analog_Parts/nmos/functional/verilog.v
+		hdlFilesDir/cds_alias.v
+		ihnl/cds0/netlist
+	+nostdout
+	+nocopyright
+	+ncvlogargs+" -neverwarn -nostdout -nocopyright"
+	+ncelabargs+" -neg_tchk  -nonotifier  -sdf_NOCheck_celltype  -access +r  -pulse_e 100  -pulse_r 100  -neverwarn  -timescale 1ns/1ns -nostdout -nocopyright"
+	+ncsimargs+" -neverwarn  -nocopyright -gui -input /Amd/hschool/courses/ECE205/work_libs/ywu37/Inverter_run1/.simTmpNCCmd "
+	+mpssession+icfb17243
+	+mpshost+laplace
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> source /usr/ece/cadence.Linux/IUS08.20.024/tools/inca/files/ncsimrc
+ncsim> database -open shmWave -shm -default -into shm.db
+Created default SHM database shmWave
+ncsim> probe -create -shm test  -all   -depth 1
+Created probe 1
+ncsim> ^C
+ncsim> TOOL:	ncxlmode	08.20-s024: Exiting on May 13, 2017 at 16:56:08 EDT  (total: 01:34:25)

@@ -1,0 +1,178 @@
+
+Running netlist
+Begin Incremental Netlisting May 15 18:09:20 2017
+si: simSetDef().... hnlCapability is initialized to "nil".
+si: simSetDef().... hnlBusCapability is initialized to "nil".
+
+*** NOTE: Stimulus name mapped table won't be printed to file
+"testfixture.verilog". If you
+    want to have them printed, please set
+simVerilogPrintStimulusNameMappingTable = t
+    in CIW before invoking the
+verilog netlister.
+*** NOTE: CDBA internal net name will be printed to those floating instance
+ports.
+    If you don't want have them printed,
+    please set
+simVerilogProcessNullPorts = t in CIW or .simrc.
+*** NOTE: All cellviews in the design will be in Netlist Configuration list.
+  
+ If you only want those cellviews that need to be re-netlisted in the list,
+   
+please set simVerilogIncrementalNetlistConfigList = t in CIW or .simrc.
+*** Warning! The module ports will be printed without the port ranges. If you
+ 
+  have split buses across module ports you may get an incorrect netlist. To get
+
+   module ports with port ranges please set simVerilogDropPortRange = nil in CIW
+or .simrc.
+
+*** NOTE: All initial state of stimulus of inout  pins are set to "z". To get
+inout pins
+    with initial state of "0", please set hnlVerilogIOInitStimulusStr
+= "0" in CIW or simrc.
+
+
+*** The netlisting will be done using connection by order
+*** ( Implicit
+connections)  for all the stopping cells
+
+***  Library - NCSU_Digital_Parts, Cell - xor2, View - functional
+
+*** Module port ordering for lib NCSU_Digital_Parts, cell xor2, view functional
+will be
+*** done using the user specified port order as follows:
+ => ("Y" "A"
+"B")
+
+***  Library - NCSU_Digital_Parts, Cell - nand2, View - functional
+
+*** Module port ordering for lib NCSU_Digital_Parts, cell nand2, view
+functional will be
+*** done using the user specified port order as follows:
+ =>
+("Y" "A" "B")
+
+***  Library - NCSU_Digital_Parts, Cell - inv, View - functional
+
+*** Module port ordering for lib NCSU_Digital_Parts, cell inv, view functional
+will be
+*** done using the user specified port order as follows:
+ => ("Y" "A")
+
+***  Library - NCSU_Digital_Parts, Cell - nor2, View - functional
+
+*** Module port ordering for lib NCSU_Digital_Parts, cell nor2, view functional
+will be
+*** done using the user specified port order as follows:
+ => ("Y" "A"
+"B")
+
+
+
+---------- Begin Netlist Configuration Info ----------
+                (incremental data only)
+
+CELL NAME                   VIEW NAME            NOTE             
+---------                   ---------            ----             
+
+nor2                        functional           *Stopping View*  
+inv                         functional           *Stopping View*  
+nand2                       functional           *Stopping View*  
+xor2                        functional           *Stopping View*  
+
+---------- End Netlist Configuration Info   ----------
+
+
+*** Netlisting of cell - add3, view - schematic successful.
+
+End netlisting May 15 18:09:20 2017
+
+Running netlist
+Begin Incremental Netlisting May 15 18:09:25 2017
+si: simSetDef().... hnlCapability is initialized to "nil".
+si: simSetDef().... hnlBusCapability is initialized to "nil".
+
+*** NOTE: Stimulus name mapped table won't be printed to file
+"testfixture.verilog". If you
+    want to have them printed, please set
+simVerilogPrintStimulusNameMappingTable = t
+    in CIW before invoking the
+verilog netlister.
+*** NOTE: CDBA internal net name will be printed to those floating instance
+ports.
+    If you don't want have them printed,
+    please set
+simVerilogProcessNullPorts = t in CIW or .simrc.
+*** NOTE: All cellviews in the design will be in Netlist Configuration list.
+  
+ If you only want those cellviews that need to be re-netlisted in the list,
+   
+please set simVerilogIncrementalNetlistConfigList = t in CIW or .simrc.
+*** Warning! The module ports will be printed without the port ranges. If you
+ 
+  have split buses across module ports you may get an incorrect netlist. To get
+
+   module ports with port ranges please set simVerilogDropPortRange = nil in CIW
+or .simrc.
+
+*** NOTE: All initial state of stimulus of inout  pins are set to "z". To get
+inout pins
+    with initial state of "0", please set hnlVerilogIOInitStimulusStr
+= "0" in CIW or simrc.
+
+
+*** The netlisting will be done using connection by order
+*** ( Implicit
+connections)  for all the stopping cells
+
+***  Library - NCSU_Digital_Parts, Cell - xor2, View - functional
+
+*** Module port ordering for lib NCSU_Digital_Parts, cell xor2, view functional
+will be
+*** done using the user specified port order as follows:
+ => ("Y" "A"
+"B")
+
+***  Library - NCSU_Digital_Parts, Cell - nand2, View - functional
+
+*** Module port ordering for lib NCSU_Digital_Parts, cell nand2, view
+functional will be
+*** done using the user specified port order as follows:
+ =>
+("Y" "A" "B")
+
+***  Library - NCSU_Digital_Parts, Cell - inv, View - functional
+
+*** Module port ordering for lib NCSU_Digital_Parts, cell inv, view functional
+will be
+*** done using the user specified port order as follows:
+ => ("Y" "A")
+
+***  Library - NCSU_Digital_Parts, Cell - nor2, View - functional
+
+*** Module port ordering for lib NCSU_Digital_Parts, cell nor2, view functional
+will be
+*** done using the user specified port order as follows:
+ => ("Y" "A"
+"B")
+
+
+
+---------- Begin Netlist Configuration Info ----------
+                (incremental data only)
+
+CELL NAME                   VIEW NAME            NOTE             
+---------                   ---------            ----             
+
+nor2                        functional           *Stopping View*  
+inv                         functional           *Stopping View*  
+nand2                       functional           *Stopping View*  
+xor2                        functional           *Stopping View*  
+
+---------- End Netlist Configuration Info   ----------
+
+
+*** Netlisting of cell - add3, view - schematic successful.
+
+End netlisting May 15 18:09:25 2017

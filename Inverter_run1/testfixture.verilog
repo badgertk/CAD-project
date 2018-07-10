@@ -1,0 +1,28 @@
+
+// Verilog stimulus file.
+// Please do not create a module in this file.
+
+
+// Default verilog stimulus. 
+
+initial
+begin 
+
+   IN = 1'b0;
+   io_GND = 1'bz;
+   io_VDD = 1'bz;
+   
+   $display("Simulation start.\n");
+   
+   #10
+   IN = 1'b0; io_GND = 1'b0; io_VDD = 1'b1;
+   $display("IN = %b, OUT = %b\n",IN, OUT);
+   
+   #10
+   IN = 1'b1; io_GND = 1'b0; io_VDD = 1'b1;
+   $display("IN = %b, OUT = %b\n",IN, OUT);
+   
+   #10
+   $display("Simulation complete.\n");
+   
+end 

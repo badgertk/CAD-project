@@ -1,0 +1,13 @@
+simFuncDPLList = '((nil libName "NCSU_Digital_Parts" cellName "xor2"
+    viewName "functional" filePath "/Amd/hschool/courses/ECE205/setup/downloaded/ncsu-cdk-1.5.1/lib/NCSU_Digital_Parts/xor2/functional/verilog.v"
+    ) 
+    (nil libName "NCSU_Digital_Parts" cellName "nand2"
+    viewName "functional" filePath "/Amd/hschool/courses/ECE205/setup/downloaded/ncsu-cdk-1.5.1/lib/NCSU_Digital_Parts/nand2/functional/verilog.v"
+    ) 
+    (nil libName "NCSU_Digital_Parts" cellName "inv"
+    viewName "functional" filePath "/Amd/hschool/courses/ECE205/setup/downloaded/ncsu-cdk-1.5.1/lib/NCSU_Digital_Parts/inv/functional/verilog.v"
+    ) 
+    (nil libName "NCSU_Digital_Parts" cellName "nor2"
+    viewName "functional" filePath "/Amd/hschool/courses/ECE205/setup/downloaded/ncsu-cdk-1.5.1/lib/NCSU_Digital_Parts/nor2/functional/verilog.v"
+    )
+)

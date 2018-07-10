@@ -1,0 +1,11 @@
+CADENCE IHNL01060
+$model
+CAD1/add3/schematic add3
+NCSU_Digital_Parts/or2/schematic or2
+NCSU_Digital_Parts/and2/schematic and2
+CAD1/FullAdder/schematic FullAdder
+$endmodel
+$net
+$endnet
+$param
+$endparam

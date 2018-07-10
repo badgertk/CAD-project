@@ -1,0 +1,23 @@
+
+`timescale 1ns / 1ns
+
+module test;
+
+
+wire  OUT;
+
+wire  GND, VDD;
+
+reg  A, B;
+
+reg   io_GND, io_VDD;
+
+
+// Inout assignments 
+cds_alias  cds_alias_inst3(VDD, io_VDD);
+
+cds_alias  cds_alias_inst4(GND, io_GND);
+
+
+nand2 top(OUT, GND, VDD, A, B); 
+ 

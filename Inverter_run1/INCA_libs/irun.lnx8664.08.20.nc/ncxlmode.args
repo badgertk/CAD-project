@@ -1,0 +1,15 @@
+//
+// File created by:  ncxlmode
+// Do not modify this file
+//
++delay_mode_path
++typdelays
+-l
+simout.tmp
+/Amd/hschool/courses/ECE205/work_libs/ywu37/Inverter_run1/testfixture.template
+-f
+/Amd/hschool/courses/ECE205/work_libs/ywu37/Inverter_run1/verilog.inpfiles
++nostdout
++nocopyright
++compile
+"+ncvlogargs+ -neverwarn -nostdout -nocopyright"

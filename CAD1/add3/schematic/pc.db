@@ -1,0 +1,20 @@
+#
+CAD1 FullAdder symbol
+I2
+I1
+I0
+#ISCELL
+basic ipin symbol
+PIN12
+PIN3
+PIN2
+PIN1
+PIN0
+PIN10
+PIN11
+#ISCELL
+basic opin symbol
+PIN9
+PIN8
+PIN7
+PIN6

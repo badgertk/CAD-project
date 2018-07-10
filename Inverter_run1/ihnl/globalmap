@@ -1,0 +1,8 @@
+CADENCE IHNL01060
+$model
+CAD2/Inverter/schematic Inverter
+$endmodel
+$net
+$endnet
+$param
+$endparam

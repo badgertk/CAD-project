@@ -1,0 +1,23 @@
+// Library - CAD1, Cell - add3, View - schematic
+// LAST TIME SAVED: May 14 13:48:29 2017
+// NETLIST TIME: May 14 13:51:37 2017
+`timescale 1ns / 1ns 
+
+module add3 ( Overflow, S1, S2, S3, A1, A2, A3, B1, B2, B3, Cin );
+
+output  Overflow, S1, S2, S3;
+
+input  A1, A2, A3, B1, B2, B3, Cin;
+
+
+specify 
+    specparam CDS_LIBNAME  = "CAD1";
+    specparam CDS_CELLNAME = "add3";
+    specparam CDS_VIEWNAME = "schematic";
+endspecify
+
+FullAdder I2 ( Overflow, S3, A3, B3, net52);
+FullAdder I1 ( net52, S2, A2, B2, net57);
+FullAdder I0 ( net57, S1, A1, B1, Cin);
+
+endmodule

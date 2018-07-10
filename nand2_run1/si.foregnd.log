@@ -1,0 +1,73 @@
+
+Running netlist
+Begin Incremental Netlisting May 15 18:29:30 2017
+si: simSetDef().... hnlCapability is initialized to "nil".
+si: simSetDef().... hnlBusCapability is initialized to "nil".
+
+*** NOTE: Stimulus name mapped table won't be printed to file
+"testfixture.verilog". If you
+    want to have them printed, please set
+simVerilogPrintStimulusNameMappingTable = t
+    in CIW before invoking the
+verilog netlister.
+*** NOTE: CDBA internal net name will be printed to those floating instance
+ports.
+    If you don't want have them printed,
+    please set
+simVerilogProcessNullPorts = t in CIW or .simrc.
+*** NOTE: All cellviews in the design will be in Netlist Configuration list.
+  
+ If you only want those cellviews that need to be re-netlisted in the list,
+   
+please set simVerilogIncrementalNetlistConfigList = t in CIW or .simrc.
+*** Warning! The module ports will be printed without the port ranges. If you
+ 
+  have split buses across module ports you may get an incorrect netlist. To get
+
+   module ports with port ranges please set simVerilogDropPortRange = nil in CIW
+or .simrc.
+
+*** NOTE: All initial state of stimulus of inout  pins are set to "z". To get
+inout pins
+    with initial state of "0", please set hnlVerilogIOInitStimulusStr
+= "0" in CIW or simrc.
+
+
+*** The netlisting will be done using connection by order
+*** ( Implicit
+connections)  for all the stopping cells
+
+***  Library - NCSU_Analog_Parts, Cell - nmos, View - functional
+
+*** Module port ordering for lib NCSU_Analog_Parts, cell nmos, view functional
+will be
+*** done using the user specified port order as follows:
+ => ("D" "S"
+"G")
+
+***  Library - NCSU_Analog_Parts, Cell - pmos, View - functional
+
+*** Module port ordering for lib NCSU_Analog_Parts, cell pmos, view functional
+will be
+*** done using the user specified port order as follows:
+ => ("D" "S"
+"G")
+
+
+
+---------- Begin Netlist Configuration Info ----------
+                (incremental data only)
+
+CELL NAME                   VIEW NAME            NOTE             
+---------                   ---------            ----             
+
+pmos                        functional           *Stopping View*  
+nmos                        functional           *Stopping View*  
+nand2                       schematic                             
+
+---------- End Netlist Configuration Info   ----------
+
+
+*** Netlisting of cell - nand2, view - schematic successful.
+
+End netlisting May 15 18:29:30 2017

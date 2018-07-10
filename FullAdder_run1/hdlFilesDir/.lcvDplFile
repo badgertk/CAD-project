@@ -1,0 +1,14 @@
+tmLCVDPLList = '((nil viewType "stranger" viewName "functional"
+    cellName "nor2" libName "NCSU_Digital_Parts"
+    ) 
+    (nil viewType "stranger" viewName "functional"
+    cellName "inv" libName "NCSU_Digital_Parts"
+    ) 
+    (nil viewType "stranger" viewName "functional"
+    cellName "nand2" libName "NCSU_Digital_Parts"
+    ) 
+    (nil viewType "stranger" viewName "functional"
+    cellName "xor2" libName "NCSU_Digital_Parts"
+    )
+)
+xxxInternalGlobAliasList = '(nil)

@@ -1,0 +1,24 @@
+simVerilogNetlistFileList = '(
+    (("CAD1" "add3") 
+	("cds3/netlist" "cds3/map" "schematic")
+    ) 
+    (("CAD1" "FullAdder") 
+	("cds2/netlist" "cds2/map" "schematic")
+    ) 
+    (("NCSU_Digital_Parts" "and2") 
+	("cds1/netlist" "cds1/map" "schematic")
+    ) 
+    (("NCSU_Digital_Parts" "or2") 
+	("cds0/netlist" "cds0/map" "schematic")
+    )
+)
+simVerilogNetlistFileLibList = '("CAD1" "NCSU_Digital_Parts")
+simVerilogNetlistFileCellList = '(
+    ("NCSU_Digital_Parts" 
+	("or2" "and2")
+    ) 
+    ("CAD1" 
+	("FullAdder" "add3")
+    )
+)
+hnlIncrementalDirectory = '"ihnl"

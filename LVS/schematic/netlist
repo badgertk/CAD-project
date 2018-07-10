@@ -1,0 +1,27 @@
+t 0 VDD inputOutput
+t 2 GND inputOutput
+t 4 OUT output
+t 3 B input
+t 1 A input
+
+n 0 /VDD
+n 1 /A
+n 2 /GND
+n 3 /B
+n 4 /OUT
+n 5 /net014
+
+; pmos Instance /M4 = auLvs device Q0
+d pmos D G S B (p D S)
+i 0 pmos 4 3 0 " m 1 l 600e-9 w 900e-9 "
+
+; pmos Instance /M1 = auLvs device Q1
+i 1 pmos 4 1 0 " m 1 l 600e-9 w 900e-9 "
+
+; nmos Instance /M2 = auLvs device Q2
+d nmos D G S B (p D S)
+i 2 nmos 5 3 2 " m 1 l 600e-9 w 900e-9 "
+
+; nmos Instance /M3 = auLvs device Q3
+i 3 nmos 4 1 5 " m 1 l 600e-9 w 900e-9 "
+

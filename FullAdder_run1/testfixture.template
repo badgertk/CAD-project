@@ -1,0 +1,22 @@
+
+`timescale 1ns / 1ns
+
+module test;
+
+
+wire  Overflow, S1, S2, S3;
+
+reg  A1, A2, A3, B1, B2, B3, Cin;
+
+
+
+add3 top(Overflow, S1, S2, S3, A1, A2, A3, B1, B2, B3, Cin); 
+ 
+
+`ifdef verilog
+
+ //please enter any additional verilog stimulus in the testfixture.verilog file
+  `include "testfixture.verilog"
+`endif
+
+endmodule 

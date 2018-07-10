@@ -1,0 +1,41 @@
+################################
+## Cadence Libraries
+################################
+#SOFTINCLUDE $CAD_STD_CELLS_DIR/cds.lib
+SOFTINCLUDE $CDSROOT/share/cdssetup/dfII/cds.lib
+
+#soft include definitions for each INCA option
+#SOFTINCLUDE $IUS_DIR/tools/inca/files/cdsvhdl.lib
+#SOFTINCLUDE $IUS_DIR/tools/inca/files/cdsvlog.lib
+
+# Soft includes for products depending on INCA compilers and elaborator
+#SOFTINCLUDE $IUS_DIR/tools/cfe/files/cds.lib
+#SOFTINCLUDE $IUS_DIR/tools/transrecord/files/cds.lib
+
+# Soft includes for Affirma AMS connection module library
+SOFTINCLUDE $IUS_DIR/tools/affirma_ams/etc/connect_lib/cds.lib
+
+################################
+## Add missing Cadence libraries
+################################
+#DEFINE functional $CDSROOT/tools/dfII/etc/cdslib/artist/functional
+
+################################
+## NCSU Libraries
+################################
+DEFINE      NCSU_Analog_Parts 	    $CDK_DIR/lib/NCSU_Analog_Parts
+DEFINE      NCSU_Digital_Parts 	    $CDK_DIR/lib/NCSU_Digital_Parts
+DEFINE      MOSIS_Layout_Test       $CDK_DIR/lib/MOSIS_Layout_Test
+DEFINE      NCSU_TechLib_ami06      $CDK_DIR/lib/NCSU_TechLib_ami06
+DEFINE      NCSU_TechLib_ami16      $CDK_DIR/lib/NCSU_TechLib_ami16
+DEFINE      NCSU_TechLib_hp06       $CDK_DIR/lib/NCSU_TechLib_hp06
+DEFINE      NCSU_TechLib_tsmc02     $CDK_DIR/lib/NCSU_TechLib_tsmc02
+DEFINE      NCSU_TechLib_tsmc02d    $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+DEFINE      NCSU_TechLib_tsmc03     $CDK_DIR/lib/NCSU_TechLib_tsmc03
+DEFINE      NCSU_TechLib_tsmc03d    $CDK_DIR/lib/NCSU_TechLib_tsmc03d
+DEFINE      NCSU_TechLib_tsmc04_4M2P    $CDK_DIR/lib/NCSU_TechLib_tsmc04_4M2P
+DEFINE      NCSU_Sheets_8ths    $CDK_DIR/lib/NCSU_Sheets_8ths
+DEFINE      UofU_TechLib_ami06 $CDK_DIR/../UofU_TechLib_ami06
+DEFINE CAD1 /Amd/hschool/courses/ECE205/work_libs/ywu37/CAD1
+DEFINE avTech /usr/ece/cadence.Linux/ASSURA41USR2_CDB/tools/assura/etc/avtech/avTech
+DEFINE CAD2 /Amd/hschool/courses/ECE205/work_libs/ywu37/CAD2

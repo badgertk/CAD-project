@@ -1,0 +1,25 @@
+//
+// File created by:  ncxlmode
+// Do not modify this file
+//
+-XLMODE
+./INCA_libs/irun.lnx8664.08.20.nc
+-RUNMODE
+/Amd/hschool/courses/ECE205/work_libs/ywu37/function/testfixture.template
+/Amd/hschool/courses/ECE205/setup/downloaded/ncsu-cdk-1.5.1/lib/NCSU_Analog_Parts/nmos/functional/verilog.v
+/Amd/hschool/courses/ECE205/setup/downloaded/ncsu-cdk-1.5.1/lib/NCSU_Analog_Parts/pmos/functional/verilog.v
+hdlFilesDir/cds_alias.v
+ihnl/cds0/netlist
+ihnl/cds1/netlist
+-NOSTDOUT
+-NOCOPYRIGHT
+-neverwarn
+-nostdout
+-nocopyright
+-CDSLIB
+./INCA_libs/irun.lnx8664.08.20.nc/cdsrun.lib
+-HDLVAR
+./INCA_libs/irun.lnx8664.08.20.nc/hdlrun.var
+-MESSAGES
+-UPDATE
+-ALLOWUNBOUND

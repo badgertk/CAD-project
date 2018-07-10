@@ -1,0 +1,31 @@
+
+`timescale 1ns / 1ns
+
+module test;
+
+
+wire  OUT;
+
+wire  GND, VDD;
+
+reg  IN;
+
+reg   io_GND, io_VDD;
+
+
+// Inout assignments 
+cds_alias  cds_alias_inst1(VDD, io_VDD);
+
+cds_alias  cds_alias_inst2(GND, io_GND);
+
+
+Inverter top(OUT, GND, VDD, IN); 
+ 
+
+`ifdef verilog
+
+ //please enter any additional verilog stimulus in the testfixture.verilog file
+  `include "testfixture.verilog"
+`endif
+
+endmodule 

@@ -1,0 +1,15 @@
+#
+UofU_TechLib_ami06 pmos layout
+I1
+#
+UofU_TechLib_ami06 nmos layout
+I12
+#ISCELL
+UofU_TechLib_ami06 M1_N symbolic
+I2
+#ISCELL
+UofU_TechLib_ami06 M1_P symbolic
+I3
+#ISCELL
+UofU_TechLib_ami06 M1_POLY symbolic
+I4

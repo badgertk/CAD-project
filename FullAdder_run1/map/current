@@ -1,0 +1,39 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "add3"
+  repList "behavioral functional system verilog pld_verilog lai_verilog lmsi_verilog schematic symbol"
+  stopList "verilog pld_verilog lai_verilog lmsi_verilog symbol"
+  hierDelim "."
+  hierPrefix "test.top"
+  globalHierPrefix "cds_globals."
+  netlistDir "/Amd/hschool/courses/ECE205/work_libs/ywu37/FullAdder_run1"
+  busRef   "ORDERED"
+  netType   "BUS"
+  leftStr  "["
+  rangeStr  ":"
+  rightStr  "]"
+ )
+( instViewTable
+ )
+( defbus
+ )
+( net
+ )
+( inst
+ )
+( model
+( "NCSU_Digital_Parts/or2/schematic" "or2" )
+( "NCSU_Digital_Parts/and2/schematic" "and2" )
+( "CAD1/FullAdder/schematic" "FullAdder" )
+( "CAD1/add3/schematic" "add3" )
+ )
+( term
+ )
+( param
+ )
+( "add3" "ihnl/cds3/map" )
+( "FullAdder" "ihnl/cds2/map" )
+( "and2" "ihnl/cds1/map" )
+( "or2" "ihnl/cds0/map" )
+ )
