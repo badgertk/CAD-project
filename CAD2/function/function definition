@@ -1,0 +1,4 @@
+Function definition
+
+F = ~A * ~B + ~A * C + ~B * C
+Using instances of 2 input NAND gate (see NAND2)
